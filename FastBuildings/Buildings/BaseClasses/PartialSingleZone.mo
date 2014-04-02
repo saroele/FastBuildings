@@ -8,7 +8,7 @@ partial model PartialSingleZone
             89.5214},                                                                                                    extent = {{-10,-10},{10,10}}, rotation = 0)));
 equation
   connect(zon.TZon,hva.TZon) annotation(Line(points={{-19.0598,-7.65812},{
-          7.86325,-7.65812},{7.86325,-7.35031},{8.1619,-7.35031}}));
+          7.86325,-7.65812},{7.86325,-7.35031},{7.7619,-7.35031}}));
   connect(zon.heaPorRad,hva.heaPorRad) annotation(Line(points={{-19.0598,
           -3.65812},{8.20513,-3.65812},{8.20513,-3.31624},{8.1027,-3.31624}}));
   connect(zon.heaPorCon,hva.heaPorCon) annotation(Line(points={{-19.0598,

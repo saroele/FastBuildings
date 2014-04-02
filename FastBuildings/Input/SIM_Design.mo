@@ -9,6 +9,7 @@ equation
   irr[1] = 0;
   powEle = 0;
   qHeaCoo = 0;
+  prf[1] = 0;
   annotation(defaultComponentName = "sim", defaultComponentPrefixes = "inner", missingInnerMessage = "
 Your model is using an outer \"sim\" component but
 an inner \"sim\" component is not defined.

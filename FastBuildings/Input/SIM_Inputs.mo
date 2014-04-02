@@ -7,10 +7,16 @@ model SIM_Inputs "SIM with inputs from filereaders or other means"
    model that instantiates this simFasBui.
    
    For example, if an irradiation and TAmb are provided, instantiate this model as follows:
-   inner FastBuildings.Input.SIM_Inputs sim(nIrr=1, booTAmb=true)
+   inner FastBuildings.Input.SIM_Inputs simFasBui(nIrr=1)
    equation
    simFasBui.TAmb = ... ;
    simFasBui.irr[1] = ... ;
+   // all other inputs are zero
+   simFasBui.TSet = 0;
+   simFasBui.prf[1] = 0;
+   simFasBui.powEle = 0;
+   simFasBui.qHeaCoo = 0;
+   
   
   */
   annotation(defaultComponentName = "sim", defaultComponentPrefixes = "inner", missingInnerMessage = "

@@ -4,7 +4,7 @@ model SingleZone_ArtificialInputs
   extends Modelica.Icons.Example;
   inner FastBuildings.Input.SIM_ArtificialInput simFasBui
                                                     annotation(Placement(visible = true, transformation(origin = {-89.817,88.5229}, extent = {{-10,-10},{10,10}}, rotation = 0)));
-  FastBuildings.Buildings.SZ_Inputs_powEle
+  Buildings.SZ_Inputs_powEle_Ventilation
                            bui(redeclare FastBuildings.Zones.ZonInt_B zon(
       cZon=1e6,
       cInt=1e7,

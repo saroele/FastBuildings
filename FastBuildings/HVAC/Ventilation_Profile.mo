@@ -25,5 +25,4 @@ equation
             lineThickness =                                                                                                   0.25, extent = {{-99.4889,99.4889},{100.17,-100.511}}),Text(rotation = 0, lineColor = {0,0,255}, fillColor = {0,0,255}, pattern = LinePattern.Solid,
             fillPattern =                                                                                                   FillPattern.None,
             lineThickness =                                                                                                   0.25, extent = {{-74.276,28.6201},{73.5945,-24.8722}}, textString = "ventilation")}));
-
 end Ventilation_Profile;

@@ -1,4 +1,4 @@
 within FastBuildings.Buildings;
-package BaseClasses 
 
+package BaseClasses
 end BaseClasses;

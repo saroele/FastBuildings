@@ -1,5 +1,4 @@
 within FastBuildings.Zones;
-
 model ZonEmb_B "States for zone and embedded heating, heaPorRad to capEmb"
   extends FastBuildings.Zones.BaseClasses.Partials.Partial_SZ_ZonEmb;
 equation
@@ -26,3 +25,4 @@ equation
        <p>First version, 12/10/2011 - RDC</p>
        </html>"), Icon(coordinateSystem(extent = {{-200, -100}, {100, 100}})));
 end ZonEmb_B;
+

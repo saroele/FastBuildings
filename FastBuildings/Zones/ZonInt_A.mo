@@ -1,5 +1,4 @@
 within FastBuildings.Zones;
-
 model ZonInt_A "States for zone and internal mass"
   extends FastBuildings.Zones.BaseClasses.Partials.Partial_SZ_ZonInt;
 equation
@@ -13,3 +12,4 @@ equation
   end for;
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonInt_A;
+

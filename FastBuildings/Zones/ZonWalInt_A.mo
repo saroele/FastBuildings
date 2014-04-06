@@ -1,5 +1,4 @@
 within FastBuildings.Zones;
-
 model ZonWalInt_A "heaPorRad and heaPorEmb connected to capInt"
   extends BaseClasses.Partials.Partial_SZ_ZonWalInt;
 equation
@@ -11,3 +10,4 @@ equation
   connect(heaPorRad, capInt.heaPor) annotation(Line(points = {{100, -40}, {60, -40}, {60, 50}, {-40, 50}, {-40, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonWalInt_A;
+

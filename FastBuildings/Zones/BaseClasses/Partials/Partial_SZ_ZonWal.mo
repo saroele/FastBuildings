@@ -1,22 +1,29 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
 partial model Partial_SZ_ZonWal "States for zone and wall"
   extends FastBuildings.Zones.BaseClasses.Partials.Partial_SZ;
   parameter Integer nIrr = 1 "Number of irradiation inputs/windows";
   parameter SI.HeatCapacity cZon = 1 "Thermal capacity of the zone";
   parameter SI.HeatCapacity cWal = 1 "Thermal capacity of the wal";
-  parameter SI.ThermalResistance rWal = 1 "Total thermal resistance of the walls, in K/W";
-  parameter Real posCapWal(min = 0, max = 1) = 0.5 "Position of the capacity in the wall.  0=interor, 1=exterior";
+  parameter SI.ThermalResistance rWal = 1
+    "Total thermal resistance of the walls, in K/W";
+  parameter Real posCapWal(min = 0, max = 1) = 0.5
+    "Position of the capacity in the wall.  0=interor, 1=exterior";
   BaseClasses.Capacitor capZon(c = cZon) "Thermal capacity of the zone" annotation(Placement(transformation(extent = {{10, 60}, {30, 80}})));
-  replaceable Windows.Window_gA[nIrr] win(each gA = 1) "Array of window models" annotation(Placement(transformation(extent = {{-100, 30}, {-80, 50}})));
-  BaseClasses.Resistance resWalExt(r = rWalExt) "External thermal resistance of the walls, in K/W" annotation(Placement(transformation(extent = {{-100, -10}, {-80, 10}})));
-  BaseClasses.Resistance resWalInt(r = rWalInt) "Internal thermal resistance of the walls, in K/W" annotation(Placement(transformation(extent = {{-40, -10}, {-20, 10}})));
-  BaseClasses.Capacitor capWal(c = cWal) "Position of this capacity is determined by posCapWal" annotation(Placement(transformation(extent = {{-70, 10}, {-50, 30}})));
+  replaceable Windows.Window_gA[nIrr] win(each gA = 1) "Array of window models"
+                                                                                annotation(Placement(transformation(extent = {{-100, 30}, {-80, 50}})));
+  BaseClasses.Resistance resWalExt(r = rWalExt)
+    "External thermal resistance of the walls, in K/W"                                             annotation(Placement(transformation(extent = {{-100, -10}, {-80, 10}})));
+  BaseClasses.Resistance resWalInt(r = rWalInt)
+    "Internal thermal resistance of the walls, in K/W"                                             annotation(Placement(transformation(extent = {{-40, -10}, {-20, 10}})));
+  BaseClasses.Capacitor capWal(c = cWal)
+    "Position of this capacity is determined by posCapWal"                                      annotation(Placement(transformation(extent = {{-70, 10}, {-50, 30}})));
 protected
   HT.Sources.PrescribedTemperature preTAmb annotation(Placement(transformation(extent = {{-150, -10}, {-130, 10}})));
   HT.Sensors.TemperatureSensor senTZon annotation(Placement(transformation(extent = {{50, -90}, {70, -70}})));
-  parameter SI.ThermalResistance rWalInt = posCapWal * rWal "Thermal resistance of the interior resistance in K/W";
-  parameter SI.ThermalResistance rWalExt = (1 - posCapWal) * rWal "Thermal resistance of the exterior resistance in K/W";
+  parameter SI.ThermalResistance rWalInt = posCapWal * rWal
+    "Thermal resistance of the interior resistance in K/W";
+  parameter SI.ThermalResistance rWalExt = (1 - posCapWal) * rWal
+    "Thermal resistance of the exterior resistance in K/W";
 equation
   for i in 1:nIrr loop
   end for;
@@ -39,3 +46,4 @@ equation
        <p>First version, 12/10/2011 - RDC</p>
        </html>"), Icon(coordinateSystem(extent = {{-200, -100}, {100, 100}})));
 end Partial_SZ_ZonWal;
+

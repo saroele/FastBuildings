@@ -1,7 +1,7 @@
 within FastBuildings.Zones;
-
 model ZonInt_B "States for zone and internal mass, splitted window gains"
-  extends FastBuildings.Zones.BaseClasses.Partials.Partial_SZ_ZonInt(redeclare FastBuildings.Zones.Windows.Window_gA_2 win);
+  extends FastBuildings.Zones.BaseClasses.Partials.Partial_SZ_ZonInt(redeclare
+      FastBuildings.Zones.Windows.Window_gA_2                                                                          win);
 equation
   connect(capInt.heaPor, resInt.heaPor_a) annotation(Line(points = {{-40, 60}, {-20, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
   connect(resInt.heaPor_b, capZon.heaPor) annotation(Line(points = {{0, 60}, {20, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
@@ -14,3 +14,4 @@ equation
   end for;
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonInt_B;
+

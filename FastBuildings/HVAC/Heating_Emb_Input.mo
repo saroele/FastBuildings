@@ -1,6 +1,8 @@
 within FastBuildings.HVAC;
 
-model Heating_Emb_Input "Heating through embedded port, heating power read from input"
+
+model Heating_Emb_Input
+  "Heating through embedded port, heating power read from input"
   extends Partial_HVAC;
   Modelica.Blocks.Interfaces.RealInput qHeaCoo "total heating/cooling input" annotation(Placement(visible = true, transformation(origin = {-100.259, 80.37479999999999}, extent = {{-12, -12}, {12, 12}}, rotation = 0), iconTransformation(origin = {-100.259, 80.37479999999999}, extent = {{-12, -12}, {12, 12}}, rotation = 0)));
 equation

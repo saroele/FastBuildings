@@ -1,5 +1,6 @@
 within FastBuildings.Input;
 
+
 model SIM_ArtificialInput "Dummy weather and inputs "
   extends FastBuildings.Input.BaseClasses.Partial_SIM;
   Modelica.Blocks.Sources.Sine TAmbSin(amplitude = 8, freqHz = 1 / 86400, offset = 283) annotation(Placement(visible = true, transformation(origin = {75.86879999999999, -55.8229}, extent = {{-5.8688, -6.1771}, {5.8688, 6.1771}}, rotation = 0)));
@@ -13,16 +14,24 @@ model SIM_ArtificialInput "Dummy weather and inputs "
   Modelica.Blocks.Math.Product product1 annotation(Placement(transformation(extent = {{-36, -54}, {-26, -44}})));
   Modelica.Blocks.Sources.Pulse wee(amplitude = 1, width = 5 / 7 * 100, period = 7 * 86400, startTime = 0) annotation(Placement(visible = true, transformation(origin = {-51.3886, -59.648}, extent = {{-6.61139, -6.35201}, {6.61144, 6.352}}, rotation = 0)));
 equation
-  connect(IGloHor.y, max1.u1) annotation(Line(points = {{49.6436, -3.7885}, {52, -3.7885}, {52, -8}, {52, -8.86195}, {58.8809, -8.86195}}));
-  connect(powElePul.y, powEle) annotation(Line(points = {{27.884, -81.648}, {39.5, -81.648}, {39.5, -104.427}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(qHea.y, qHeaCoo) annotation(Line(points = {{61.3978, -81.39870000000001}, {79.5, -81.39870000000001}, {79.5, -104.427}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(TAmbSin.y, TAmb) annotation(Line(points = {{82.3245, -55.8229}, {88, -55.8229}, {88, -80.4273}, {105.5, -80.4273}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(max1.y, irr[1]) annotation(Line(points = {{71.7499, -12.2887}, {84, -12.2887}, {84, -40.4273}, {105.5, -40.4273}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(const.y, max1.u2) annotation(Line(points = {{49.866, -21.4166}, {54, -21.4166}, {54, -15.7154}, {58.8809, -15.7154}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(IGloHor.y, max1.u1) annotation(Line(points={{49.6436,-3.7885},{52,
+          -3.7885},{52,-8},{52,-8.86195},{58.8809,-8.86195}}));
+  connect(powElePul.y, powEle) annotation(Line(points={{27.884,-81.648},{39.5,
+          -81.648},{39.5,-104.427}},                                                                            color = {0, 0, 127}, smooth = Smooth.None));
+  connect(qHea.y, qHeaCoo) annotation(Line(points={{61.3978,-81.3987},{79.5,
+          -81.3987},{79.5,-104.427}},                                                                                          color = {0, 0, 127}, smooth = Smooth.None));
+  connect(TAmbSin.y, TAmb) annotation(Line(points={{82.3245,-55.8229},{88,
+          -55.8229},{88,-80.4273},{105.5,-80.4273}},                                                                          color = {0, 0, 127}, smooth = Smooth.None));
+  connect(max1.y, irr[1]) annotation(Line(points={{71.7499,-12.2887},{84,
+          -12.2887},{84,-40.4273},{105.5,-40.4273}},                                                                         color = {0, 0, 127}, smooth = Smooth.None));
+  connect(const.y, max1.u2) annotation(Line(points={{49.866,-21.4166},{54,
+          -21.4166},{54,-15.7154},{58.8809,-15.7154}},                                                                          color = {0, 0, 127}, smooth = Smooth.None));
   connect(const1.y, TSet) annotation(Line(points = {{-8.133990000000001, -77.4166}, {-0.5, -77.4166}, {-0.5, -104.427}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(day.y, product1.u1) annotation(Line(points = {{-44.116, -37.648}, {-40, -37.648}, {-40, -46}, {-37, -46}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(wee.y, product1.u2) annotation(Line(points = {{-44.116, -59.648}, {-42, -59.648}, {-42, -52}, {-37, -52}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(product1.y, prf[1]) annotation(Line(points = {{-25.5, -49}, {-22, -49}, {-22, -62}, {-40.5, -62}, {-40.5, -104.427}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(day.y, product1.u1) annotation(Line(points={{-44.116,-37.648},{-40,
+          -37.648},{-40,-46},{-37,-46}},                                                                             color = {0, 0, 127}, smooth = Smooth.None));
+  connect(wee.y, product1.u2) annotation(Line(points={{-44.116,-59.648},{-42,
+          -59.648},{-42,-52},{-37,-52}},                                                                             color = {0, 0, 127}, smooth = Smooth.None));
+  connect(product1.y, prf) annotation(Line(points = {{-25.5, -49}, {-22, -49}, {-22, -62}, {-40.5, -62}, {-40.5, -104.427}}, color = {0, 0, 127}, smooth = Smooth.None));
   annotation(defaultComponentName = "sim", defaultComponentPrefixes = "inner", missingInnerMessage = "
        Your model is using an outer \"sim\" component but
        an inner \"sim\" component is not defined.

@@ -1,5 +1,4 @@
 within FastBuildings.Zones;
-
 model ZonWal_B "All ports connected to capZonl"
   extends BaseClasses.Partials.Partial_SZ_ZonWal;
 equation
@@ -11,3 +10,4 @@ equation
   connect(heaPorRad, capZon.heaPor) annotation(Line(points = {{100, -40}, {20, -40}, {20, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonWal_B;
+

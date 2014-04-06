@@ -1,5 +1,4 @@
 within FastBuildings.Zones;
-
 model ZonWalIntEmb_A "Embedded connected to capZon, heaPorRad to capInt"
   extends BaseClasses.Partials.Partial_SZ_ZonWalIntEmb;
 equation
@@ -11,3 +10,4 @@ equation
   end for;
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonWalIntEmb_A;
+

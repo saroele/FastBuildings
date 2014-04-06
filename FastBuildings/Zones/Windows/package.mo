@@ -1,4 +1,3 @@
 within FastBuildings.Zones;
-
-package Windows
+package Windows 
 end Windows;

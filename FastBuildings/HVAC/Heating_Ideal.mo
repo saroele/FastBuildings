@@ -1,6 +1,8 @@
 within FastBuildings.HVAC;
 
-model Heating_Ideal "Heating only, heating power calculated from ideal heating with time constant"
+
+model Heating_Ideal
+  "Heating only, heating power calculated from ideal heating with time constant"
   extends Partial_HVAC;
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";
   parameter SI.HeatCapacity cZon "Capacity of the zone";

@@ -1,11 +1,13 @@
 within FastBuildings.HVAC;
 
+
 model Heating_OnOff "Heating only, with hysteresis and variable setpoint"
   extends Partial_HVAC;
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";
   SI.Power QHeaCoo "Total heating power";
   parameter SI.Power QNom "Nominal (= maximum) power";
-  parameter SI.TemperatureDifference dTHys = 1 "Hysteresis on temperature set point";
+  parameter SI.TemperatureDifference dTHys = 1
+    "Hysteresis on temperature set point";
   Modelica.Blocks.Interfaces.RealInput TSet annotation(Placement(visible = true, transformation(origin = {0.422, -104.341}, extent = {{-12, -12}, {12, 12}}, rotation = 90), iconTransformation(origin = {0.422, -96.3407}, extent = {{-12, -12}, {12, 12}}, rotation = 90)));
 equation
   if noEvent(TZon < TSet) then

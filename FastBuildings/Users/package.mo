@@ -1,4 +1,3 @@
 within FastBuildings;
-
-package Users
+package Users 
 end Users;

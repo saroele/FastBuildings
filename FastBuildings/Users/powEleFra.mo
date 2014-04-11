@@ -1,6 +1,4 @@
 within FastBuildings.Users;
-
-
 model powEleFra
   "Converts a fraction of powEle into internal gains (distinction between convective and radiative)"
   parameter Real fraTot = 1

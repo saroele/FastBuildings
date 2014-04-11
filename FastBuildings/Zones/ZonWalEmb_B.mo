@@ -10,4 +10,3 @@ equation
   connect(resInf.heaPor_a, preTAmb.port) annotation(Line(points = {{-100, -60}, {-112, -60}, {-112, 0}, {-130, 0}}, color = {191, 0, 0}, smooth = Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonWalEmb_B;
-

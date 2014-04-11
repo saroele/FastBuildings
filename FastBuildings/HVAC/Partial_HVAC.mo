@@ -11,4 +11,3 @@ partial model Partial_HVAC
             fillPattern =                                                                                                    FillPattern.None,
             lineThickness =                                                                                                    0.25, extent = {{-74.276, 28.6201}, {73.5945, -24.8722}}, textString = "hvac")}));
 end Partial_HVAC;
-

@@ -1,6 +1,4 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
-
 partial model Partial_SZ_ZonEmb "States for zone and embedded heating"
   extends Partial_SZ_Zon;
   parameter SI.HeatCapacity cEmb = 1 "Thermal capacity of the embedded system";

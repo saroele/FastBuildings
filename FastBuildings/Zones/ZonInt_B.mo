@@ -14,4 +14,3 @@ equation
   end for;
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonInt_B;
-

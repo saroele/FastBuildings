@@ -16,4 +16,3 @@ equation
        For simulation drag a sim from FastBuildings.Input 
        into your model to specify your Simulation Input Manager.", Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})));
 end SIM_Design;
-

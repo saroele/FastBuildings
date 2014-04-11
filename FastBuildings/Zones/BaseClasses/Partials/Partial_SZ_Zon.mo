@@ -1,6 +1,4 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
-
 partial model Partial_SZ_Zon
   "Single state, only zone temperature, array of windows"
   extends FastBuildings.Zones.BaseClasses.Partials.Partial_SZ;

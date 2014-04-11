@@ -1,6 +1,4 @@
 within FastBuildings.HVAC;
-
-
 model Ventilation_Profile
   "Fixed flowrate ventilation based on a profile from simFasBui"
 
@@ -14,7 +12,7 @@ model Ventilation_Profile
   parameter SI.SpecificHeatCapacity cpAir = 1012
     "Specific heat of air, room conditions";
 equation
-  heaPorCon.Q_flow = simFasBui.prf * mFloVen * cpAir * (simFasBui.TAmb - TZon);
+  heaPorCon.Q_flow = simFasBui.prf * mFloVen * cpAir * (TZon - simFasBui.TAmb);
   annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, pattern = LinePattern.Solid,
             fillPattern =                                                                                                    FillPattern.None,
             lineThickness =                                                                                                    0.25, extent = {{-99.4889, 99.4889}, {100.17, -100.511}}), Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, pattern = LinePattern.Solid,

@@ -1,6 +1,4 @@
 within FastBuildings.HVAC;
-
-
 model Heating_OnOff "Heating only, with hysteresis and variable setpoint"
   extends Partial_HVAC;
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";

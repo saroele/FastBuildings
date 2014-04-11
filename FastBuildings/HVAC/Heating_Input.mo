@@ -7,6 +7,6 @@ equation
   heaPorCon.Q_flow = -(1 - fraRad) * qHeaCoo;
   heaPorRad.Q_flow = -fraRad * qHeaCoo;
   heaPorEmb.Q_flow = 0;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics));
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -100},{100,100}}),                                                                                                    graphics));
 end Heating_Input;
-

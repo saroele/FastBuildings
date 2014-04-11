@@ -1,6 +1,4 @@
 within FastBuildings.Input;
-
-
 model SIM_ArtificialInput "Dummy weather and inputs "
   extends FastBuildings.Input.BaseClasses.Partial_SIM;
   Modelica.Blocks.Sources.Sine TAmbSin(amplitude = 8, freqHz = 1 / 86400, offset = 283) annotation(Placement(visible = true, transformation(origin = {75.86879999999999, -55.8229}, extent = {{-5.8688, -6.1771}, {5.8688, 6.1771}}, rotation = 0)));

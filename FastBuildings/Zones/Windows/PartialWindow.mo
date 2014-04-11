@@ -1,6 +1,4 @@
 within FastBuildings.Zones.Windows;
-
-
 partial model PartialWindow "Partial window model"
   Modelica.Blocks.Interfaces.RealInput irr annotation(Placement(visible = true, transformation(origin = {-98.824, -0.34941}, extent = {{-12, -12}, {12, 12}}, rotation = 0), iconTransformation(origin = {-98.824, -0.34941}, extent = {{-12, -12}, {12, 12}}, rotation = 0)));
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b heaPor1 annotation(Placement(visible = true, transformation(origin = {100.913, -0.52412}, extent = {{-12, -12}, {12, 12}}, rotation = 0), iconTransformation(origin = {100.913, -0.52412}, extent = {{-12, -12}, {12, 12}}, rotation = 0)));

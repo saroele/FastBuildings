@@ -1,6 +1,4 @@
 within FastBuildings.Input.BaseClasses;
-
-
 partial model Partial_SIM
   parameter Integer nIrr(min = 1) = 1 "Number of irradiation vectors";
   parameter Integer nPrf(min = 1) = 1 "Number of profiles";

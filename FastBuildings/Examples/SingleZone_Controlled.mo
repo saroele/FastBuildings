@@ -1,6 +1,4 @@
 within FastBuildings.Examples;
-
-
 model SingleZone_Controlled
   "Single zone simulation with controlled heating system"
   extends Modelica.Icons.Example;

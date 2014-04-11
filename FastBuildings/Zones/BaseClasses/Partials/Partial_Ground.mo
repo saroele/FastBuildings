@@ -1,6 +1,4 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
-
 partial model Partial_Ground
   "Partial model for heat losses to the ground, with fixed TGro"
   parameter SI.ThermalResistance rGro = 1

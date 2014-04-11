@@ -1,6 +1,4 @@
 within FastBuildings.Buildings.BaseClasses;
-
-
 partial model PartialSingleZone
   replaceable FastBuildings.Zones.BaseClasses.Partials.Partial_SZ zon annotation(Placement(visible = true, transformation(origin = {-29.0598, 0.34188}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   replaceable FastBuildings.HVAC.Partial_HVAC hva annotation(Placement(visible = true, transformation(origin = {18.1197, 0.683761}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

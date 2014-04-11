@@ -10,4 +10,3 @@ equation
   connect(use.heaPorCon, zon.heaPorCon) annotation(Line(points = {{-19.987, 39.9896}, {-6, 39.9896}, {-6, 0.34188}, {-19.0598, 0.34188}}, color = {191, 0, 0}, smooth = Smooth.None));
   annotation(Diagram(graphics));
 end SZ_Controlled;
-

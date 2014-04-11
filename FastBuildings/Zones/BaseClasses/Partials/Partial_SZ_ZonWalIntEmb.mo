@@ -1,6 +1,4 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
-
 partial model Partial_SZ_ZonWalIntEmb
   "States for zone, walls, internal mass and embedded heating"
   extends Partial_SZ_ZonWalInt;

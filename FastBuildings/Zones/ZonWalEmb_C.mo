@@ -13,4 +13,3 @@ equation
   connect(resGro.heaPor_a, capEmb.heaPor) annotation(Line(points = {{-40, -46}, {-40, -26}, {60, -26}, {60, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -100}, {100, 100}}), graphics));
 end ZonWalEmb_C;
-

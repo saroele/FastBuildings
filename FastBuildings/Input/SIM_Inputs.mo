@@ -1,6 +1,4 @@
 within FastBuildings.Input;
-
-
 model SIM_Inputs "SIM with inputs from filereaders or other means"
   extends FastBuildings.Input.BaseClasses.Partial_SIM;
   /* 

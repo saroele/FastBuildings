@@ -10,4 +10,3 @@ equation
   connect(capInt.heaPor, resInt.heaPor_a) annotation(Line(points = {{-40, 60}, {-20, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
   connect(resInt.heaPor_b, capZon.heaPor) annotation(Line(points = {{0, 60}, {20, 60}}, color = {191, 0, 0}, smooth = Smooth.None));
 end Partial_SZ_ZonWalInt;
-

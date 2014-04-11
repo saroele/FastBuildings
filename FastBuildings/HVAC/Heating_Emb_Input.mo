@@ -1,6 +1,4 @@
 within FastBuildings.HVAC;
-
-
 model Heating_Emb_Input
   "Heating through embedded port, heating power read from input"
   extends Partial_HVAC;

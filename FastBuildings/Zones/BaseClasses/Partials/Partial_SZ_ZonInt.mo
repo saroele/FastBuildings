@@ -1,6 +1,4 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
-
 partial model Partial_SZ_ZonInt "States for zone and internal mass"
   extends Partial_SZ_Zon;
   parameter SI.HeatCapacity cInt = 1 "Thermal capacity of the zone";

@@ -27,4 +27,3 @@ equation
        <p>First version, 12/10/2011 - RDC</p>
        </html>"), Icon(coordinateSystem(extent = {{-200, -100}, {100, 100}})));
 end Zon_B;
-

@@ -1,6 +1,4 @@
 within FastBuildings.Zones.BaseClasses.Partials;
-
-
 partial model Partial_SZ "Single zone partial model, no air node"
   HT.Interfaces.HeatPort_a heaPorCon "Convective heat transfer" annotation(Placement(visible = true, transformation(extent = {{90, -10}, {110, 10}})));
   HT.Interfaces.HeatPort_a heaPorRad "Radiative heat transfer" annotation(Placement(transformation(extent = {{90, -50}, {110, -30}})));

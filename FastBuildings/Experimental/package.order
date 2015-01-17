@@ -4,3 +4,6 @@ Ventilation_Profile
 SIM_MoreInputs
 Partial_HeatProduction
 HP_AW_QSet_ConstantCOP
+GB_QSet_ConstantEta
+Heating_Input_HP
+Heating_Input_GB

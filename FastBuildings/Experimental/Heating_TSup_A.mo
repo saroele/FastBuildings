@@ -8,10 +8,6 @@ model Heating_TSup_A
     "Fixed heat transfer coefficient of heat emission system";
   SI.Power qHeaCoo "Total heating power";
 
-  outer Input.BaseClasses.Partial_SIM simFasBui
-    "Weather and input data, to be provided by an inner submodel of Partial_SIM"
-                                                                                                        annotation(Placement(visible = true, transformation(origin={-90.1538,
-            89.5214},                                                                                                    extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
 
   qHeaCoo = (simFasBui.TSet - TZon) / rHea;

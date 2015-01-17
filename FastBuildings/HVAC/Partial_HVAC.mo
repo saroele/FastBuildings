@@ -6,6 +6,10 @@ partial model Partial_HVAC
   HT.Interfaces.HeatPort_a heaPorCon annotation(Placement(visible = true, transformation(origin = {-99.83,0.0682}, extent = {{-12,-12},{12,12}}, rotation = 0), iconTransformation(origin = {-99.83,0.0682}, extent = {{-12,-12},{12,12}}, rotation = 0)));
   //parameter Boolean booEmb = true "if true, add a heatPort for Embedded heat transfer";
   HT.Interfaces.HeatPort_b heaPorEmb annotation(Placement(visible = true, transformation(origin = {-100.614,40.944}, extent = {{-12,-12},{12,12}}, rotation = 0), iconTransformation(origin = {-99.83,39.9318}, extent = {{-12,-12},{12,12}}, rotation = 0)));
+  outer Input.BaseClasses.Partial_SIM simFasBui
+    "Weather and input data, to be provided by an inner submodel of Partial_SIM"
+                                                                                                        annotation(Placement(visible = true, transformation(origin={-90.1538,
+            89.5214},                                                                                                    extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100,-100},{100,100}}), graphics), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -100},{100,100}}),                                                                                                    graphics={
         Rectangle(

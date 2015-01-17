@@ -15,10 +15,6 @@ model Heating_TSup_B
   SI.ThermalResistance rHea
     "Resulting thermal resistance of the emission system";
 
-  outer Input.BaseClasses.Partial_SIM simFasBui
-    "Weather and input data, to be provided by an inner submodel of Partial_SIM"
-                                                                                                        annotation(Placement(visible = true, transformation(origin={-90.1538,
-            89.5214},                                                                                                    extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   1/rHea = h0 + h1*(TSet - TZon);
   qHeaCoo * rHea = (simFasBui.TSet - TZon);

@@ -5,3 +5,4 @@ dslog.txt
 dsmodel.c
 dymosim
 log.txt
+*.mat

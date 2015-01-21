@@ -8,11 +8,13 @@ model Ventilation_Profile
     "Weather and input data, to be provided by an inner submodel of Partial_SIM"
                                                                                                         annotation(Placement(visible = true, transformation(origin = {-90.1538, 89.5214}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   parameter SI.MassFlowRate mFloVen = 0 "Ventilation mass flow rate";
-  parameter Integer nPrf = 1 "Profile to be used for ventilation";
   parameter SI.SpecificHeatCapacity cpAir = 1012
     "Specific heat of air, room conditions";
+
+  Modelica.Blocks.Interfaces.RealInput prfVen
+    annotation (Placement(transformation(extent={{-126,40},{-86,80}})));
 equation
-  heaPorCon.Q_flow = simFasBui.prf * mFloVen * cpAir * (TZon - simFasBui.TAmb);
+  heaPorCon.Q_flow = prfVen * mFloVen * cpAir * (TZon - simFasBui.TAmb);
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -100},{100,100}}),                                                                           graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, pattern = LinePattern.Solid,
             fillPattern =                                                                                                    FillPattern.None,

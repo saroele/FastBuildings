@@ -16,8 +16,10 @@ model GB_QSet_ConstantEta "Gas boiler with constant eta and QSet"
         extent={{-10,10},{10,-10}},
         rotation=180,
         origin={-106,0})));
+  Modelica.Blocks.Interfaces.RealInput QSet
+    annotation (Placement(transformation(extent={{-126,40},{-86,80}})));
 equation
-  Q = simFasBui.qHeaCoo;
+  Q = QSet;
   PEle = 0;
   PFuel = Q/eta;
 

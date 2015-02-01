@@ -10,6 +10,13 @@ partial model Partial_HeatProduction "Partial for heat production"
     annotation (Placement(transformation(extent={{96,30},{116,50}})));
   Modelica.Blocks.Interfaces.RealOutput PFuel
     annotation (Placement(transformation(extent={{96,-50},{116,-30}})));
+  HT.Sources.PrescribedHeatFlow preQ
+    annotation (Placement(transformation(extent={{-40,-10},{-60,10}})));
+equation
+  connect(heaPorHot, preQ.port) annotation (Line(
+      points={{-99.83,0.0682},{-80,0.0682},{-80,0},{-60,0}},
+      color={191,0,0},
+      smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics));
 end Partial_HeatProduction;

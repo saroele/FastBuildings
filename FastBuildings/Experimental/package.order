@@ -4,7 +4,10 @@ Ventilation_Profile
 SIM_MoreInputs
 Partial_HeatProduction
 HP_AW_QSet_ConstantCOP
+HP_AW_QSet_COP_TAmb
 GB_QSet_ConstantEta
+GB_QSet_Eta_TAmb
+HP_AW_QSet_COP_TAmb_TSup
 Heating_Input_HP
 Heating_Input_GB
 SingleZone_ArtificialInputs
@@ -12,5 +15,6 @@ Example_GB
 Heating_Input_KK
 KK
 HVAC_KK
-HP_AW_QSet_COP_TAmb
 TwoPort_PrescribedHeatFlow
+HVAC_KK_TAmb
+ThemalSplitter

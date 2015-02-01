@@ -22,7 +22,8 @@ equation
       smooth=Smooth.None));
 
   connect(heaPorEmb, capInt.heaPor) annotation (Line(
-      points={{100,39.9057},{80,40},{80,40},{60,40},{60,50},{-40,50},{-40,60}},
+      points={{99.9999,39.9528},{80,39.9528},{80,40},{60,40},{60,50},{-40,50},{
+          -40,60}},
       color={191,0,0},
       smooth=Smooth.None));
 

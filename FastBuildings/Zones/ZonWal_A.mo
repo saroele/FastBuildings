@@ -9,7 +9,7 @@ equation
       smooth=Smooth.None));
   end for;
   connect(heaPorEmb, capWal.heaPor) annotation (Line(
-      points={{100,39.9057},{60,39.9057},{60,-20},{-60,-20},{-60,10}},
+      points={{99.9999,39.9528},{60,39.9528},{60,-20},{-60,-20},{-60,10}},
       color={191,0,0},
       smooth=Smooth.None));
   connect(heaPorRad, capWal.heaPor) annotation (Line(

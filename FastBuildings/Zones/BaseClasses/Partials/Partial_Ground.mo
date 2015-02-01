@@ -9,15 +9,15 @@ partial model Partial_Ground
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={-78,-42})));
+        origin={-84,-80})));
   Resistance resGro(r=rGro) "Resistance for heat losses to the ground"
     annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
         rotation=0,
-        origin={-24,-42})));
+        origin={-30,-80})));
 equation
   connect(preTGro.port, resGro.heaPor_b) annotation (Line(
-      points={{-68,-42},{-68,-42},{-34,-42},{-34,-42}},
+      points={{-74,-80},{-40,-80}},
       color={191,0,0},
       smooth=Smooth.None));
   annotation (Diagram(graphics));

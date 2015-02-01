@@ -13,7 +13,8 @@ equation
       color={191,0,0},
       smooth=Smooth.None));
   connect(heaPorEmb, capInt.heaPor) annotation (Line(
-      points={{100,39.9057},{76,39.9057},{76,40},{46,40},{46,50},{-40,50},{-40,60}},
+      points={{99.9999,39.9528},{76,39.9528},{76,40},{46,40},{46,50},{-40,50},{
+          -40,60}},
       color={191,0,0},
       smooth=Smooth.None));
 
@@ -32,7 +33,7 @@ equation
       smooth=Smooth.None));
   end for;
   connect(resGro.heaPor_a, senTZon.port) annotation (Line(
-      points={{-40,-46},{-40,-20},{20,-20},{20,-80},{50,-80}},
+      points={{-20,-80},{-20,-80},{20,-80},{20,-80},{50,-80}},
       color={191,0,0},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-200,

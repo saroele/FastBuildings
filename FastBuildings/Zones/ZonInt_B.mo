@@ -13,7 +13,8 @@ equation
       color={191,0,0},
       smooth=Smooth.None));
   connect(heaPorEmb, capInt.heaPor) annotation (Line(
-      points={{100,39.9057},{76,39.9057},{76,40},{46,40},{46,50},{-40,50},{-40,60}},
+      points={{99.9999,39.9528},{76,39.9528},{76,40},{46,40},{46,50},{-40,50},{
+          -40,60}},
       color={191,0,0},
       smooth=Smooth.None));
 

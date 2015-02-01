@@ -23,7 +23,6 @@ ZonWalInt_I
 ZonWalInt_J
 ZonWalIntBou_A
 ZonWalIntBou_B
-ZonWalIntBou_C
 ZonWalIntBouCel_A
 ZonEmbInt_A
 ZonEmbInt_B
@@ -33,6 +32,7 @@ ZonWalEmb_C
 ZonWalEmb_D
 ZonWalIntEmb_A
 ZonWalIntEmb_B
+ZonWalIntEmb_C
 ZonBou_A
 ZonInt_E
 ZonInt_F

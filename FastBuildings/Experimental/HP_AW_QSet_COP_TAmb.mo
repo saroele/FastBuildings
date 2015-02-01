@@ -1,5 +1,5 @@
 within FastBuildings.Experimental;
-model HP_AW_QSet_ConstantCOP "Air-water heat pump with constant COP and QSet"
+model HP_AW_QSet_COP_TAmb "Air-water heat pump with QSet and COP based on TAmb"
   //extends Partial_HeatProduction;
    outer Input.BaseClasses.Partial_SIM simFasBui
     "Weather and input data, to be provided by an inner submodel of Partial_SIM"
@@ -15,15 +15,17 @@ model HP_AW_QSet_ConstantCOP "Air-water heat pump with constant COP and QSet"
         rotation=180,
         origin={-106,0})));
 
-  parameter Real COP=3;
+  parameter Real COP_0=3;
+  parameter Real fTAmb = 0.1;
+  Real COP = COP_0 + fTAmb * (simFasBui.TAmb-(7+273.15));
 
   Modelica.Blocks.Interfaces.RealInput QSet
     annotation (Placement(transformation(extent={{-126,40},{-86,80}})));
 equation
   Q = QSet;
-  PEle = Q / COP;
+  PEle * COP = Q;
   PFuel = 0;
 
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics));
-end HP_AW_QSet_ConstantCOP;
+end HP_AW_QSet_COP_TAmb;

@@ -9,7 +9,6 @@ model Heating_TSup_A
   SI.Power qHeaCoo "Total heating power";
 
 equation
-
   qHeaCoo = (simFasBui.TSet - TZon) / rHea;
 
   heaPorCon.Q_flow = -(1 - fraRad) * qHeaCoo;

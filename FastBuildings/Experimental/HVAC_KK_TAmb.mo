@@ -26,9 +26,9 @@ model HVAC_KK_TAmb "Total HVAC model for KK"
         rotation=0,
         origin={-70,-40})));
   Modelica.Blocks.Sources.RealExpression expQCon(y=(1 - fraRad)*simFasBui.qHeaCoo)
-    annotation (Placement(transformation(extent={{-40,10},{-60,30}})));
+    annotation (Placement(transformation(extent={{0,10},{-60,30}})));
   Modelica.Blocks.Sources.RealExpression expQRad(y=fraRad*simFasBui.qHeaCoo)
-    annotation (Placement(transformation(extent={{-40,-30},{-60,-10}})));
+    annotation (Placement(transformation(extent={{0,-30},{-60,-10}})));
   HT.Sources.FixedHeatFlow      qEmb(Q_flow=0)
     annotation (Placement(transformation(extent={{-68,30},{-84,46}})));
   HT.Sources.PrescribedTemperature
@@ -69,11 +69,11 @@ equation
       color={191,0,0},
       smooth=Smooth.None));
   connect(expQCon.y, qCon.QSet) annotation (Line(
-      points={{-61,20},{-70,20},{-70,10.6}},
+      points={{-63,20},{-70,20},{-70,10.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(expQRad.y, qRad.QSet) annotation (Line(
-      points={{-61,-20},{-70,-20},{-70,-29.4}},
+      points={{-63,-20},{-70,-20},{-70,-29.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(heaPorEmb, qEmb.port) annotation (Line(

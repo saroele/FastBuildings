@@ -19,3 +19,4 @@ TwoPort_PrescribedHeatFlow
 HVAC_KK_TAmb
 ThemalSplitter
 KK_HVAC_ONLY
+HP_AW_QSet_COP_TAmb_TSupInput

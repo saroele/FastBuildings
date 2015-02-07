@@ -1,11 +1,14 @@
 within FastBuildings.Experimental;
 model HVAC_KK_TZon
-  "Total HVAC model for KK, with input TZon for boundary condition to capTecRoo"
+  "Total HVAC model for KK, with TZon instead of TAmb for connection to capTecRoo"
   extends HVAC.Partial_HVAC;
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";
   parameter SI.ThermalResistance rLos = 1
     "Total thermal resistance to the technical room, in K/W";
   parameter SI.HeatCapacity cHea = 1 "Thermal capacity of the zone";
+  parameter SI.ThermalResistance rTecRoo = 1
+    "Total thermal resistance to the technical room, in K/W";
+  parameter SI.HeatCapacity cTecRoo = 1 "Thermal capacity of the zone";
 
   GB_QSet_ConstantEta gb
     annotation (Placement(transformation(extent={{72,30},{92,50}})));
@@ -34,13 +37,21 @@ model HVAC_KK_TZon
     annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
-        origin={-12,60})));
+        origin={-48,60})));
   Zones.BaseClasses.Resistance
              resLos(r=rLos) "Resistance for heat losses to technical room"
     annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={12,60})));
+  Zones.BaseClasses.Capacitor capTecRoo(c=cTecRoo)
+    annotation (Placement(transformation(extent={{-16,56},{4,36}})));
+  Zones.BaseClasses.Resistance resTecRoo(r=rTecRoo)
+    "Resistance for heat losses to technical room" annotation (Placement(
+        transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=0,
+        origin={-24,60})));
 equation
   connect(heaPorCon, qCon.heaPor_b) annotation (Line(
       points={{-99.83,0.0682},{-90,0.0682},{-90,0},{-80,0}},
@@ -75,6 +86,18 @@ equation
       points={{22,60},{40,60}},
       color={191,0,0},
       smooth=Smooth.None));
+  connect(resLos.heaPor_b, resTecRoo.heaPor_a) annotation (Line(
+      points={{2,60},{-14,60}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(resLos.heaPor_b, capTecRoo.heaPor) annotation (Line(
+      points={{2,60},{-6,60},{-6,56}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(resTecRoo.heaPor_b, preTAmb.port) annotation (Line(
+      points={{-34,60},{-42,60}},
+      color={191,0,0},
+      smooth=Smooth.None));
   connect(hp1.heaPorHot, capHea.heaPor) annotation (Line(
       points={{72.017,0.00682},{40,0.00682},{40,60}},
       color={191,0,0},
@@ -88,13 +111,9 @@ equation
       color={191,0,0},
       smooth=Smooth.None));
   connect(TZon, preTAmb.T) annotation (Line(
-      points={{-99.578,-80.3407},{-78,-80.3407},{-78,-80},{-42,-80},{-42,60},{-19.2,
-          60}},
+      points={{-99.578,-80.3407},{-44,-80.3407},{-44,46},{-66,46},{-66,60},{
+          -55.2,60}},
       color={0,0,127},
-      smooth=Smooth.None));
-  connect(resLos.heaPor_b, preTAmb.port) annotation (Line(
-      points={{2,60},{-6,60}},
-      color={191,0,0},
       smooth=Smooth.None));
   annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100,-100},{100,100}}), graphics), Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -100},{100,100}}),                                                                                                    graphics));

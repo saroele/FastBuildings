@@ -1,6 +1,6 @@
 within FastBuildings.Experimental;
-model HVAC_KK_TZon
-  "Total HVAC model for KK, with TZon instead of TAmb for connection to capTecRoo"
+model HVAC_KK_TZon_Tes_SingleInput
+  "Total HVAC model for KK with TES with one input"
   extends HVAC.Partial_HVAC;
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";
   parameter SI.ThermalResistance rLos = 1
@@ -9,6 +9,9 @@ model HVAC_KK_TZon
   parameter SI.ThermalResistance rTecRoo = 1
     "Total thermal resistance to the technical room, in K/W";
   parameter SI.HeatCapacity cTecRoo = 1 "Thermal capacity of the zone";
+  parameter SI.HeatCapacity cTes = 1 "Thermal capacity of TES";
+  parameter SI.ThermalResistance rTes = 1
+    "Total thermal resistance from TES to technical room, in K/W";
 
   GB_QSet_ConstantEta gb
     annotation (Placement(transformation(extent={{72,30},{92,50}})));
@@ -52,6 +55,29 @@ model HVAC_KK_TZon
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={-24,60})));
+  Zones.BaseClasses.Capacitor capTes(c=cTes)
+    annotation (Placement(transformation(extent={{-34,-68},{-14,-48}})));
+  Zones.BaseClasses.Resistance resTes(r=rTes)
+    "Resistance for heat losses to technical room" annotation (Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=0,
+        origin={12,-68})));
+  TwoPort_PrescribedHeatFlow TES annotation (Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=0,
+        origin={12,-90})));
+  Modelica.Blocks.Interfaces.RealInput QTes "Charging is positive" annotation (
+      Placement(
+      visible=true,
+      transformation(
+        origin={104.422,-64.3407},
+        extent={{12,-12},{-12,12}},
+        rotation=0),
+      iconTransformation(
+        origin={-99.578,-80.3407},
+        extent={{-12,-12},{12,12}},
+        rotation=0)));
 equation
   connect(heaPorCon, qCon.heaPor_b) annotation (Line(
       points={{-99.83,0.0682},{-90,0.0682},{-90,0},{-80,0}},
@@ -115,6 +141,26 @@ equation
           -55.2,60}},
       color={0,0,127},
       smooth=Smooth.None));
+  connect(capTes.heaPor, resTes.heaPor_a) annotation (Line(
+      points={{-24,-68},{2,-68}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(resTes.heaPor_b, resTecRoo.heaPor_a) annotation (Line(
+      points={{22,-68},{28,-68},{28,40},{-6,40},{-6,60},{-14,60}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(TES.heaPor_a, capHea.heaPor) annotation (Line(
+      points={{22,-90},{40,-90},{40,60}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(capTes.heaPor, TES.heaPor_b) annotation (Line(
+      points={{-24,-68},{-14,-68},{-14,-90},{2,-90}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(QTes, TES.QSet) annotation (Line(
+      points={{104.422,-64.3407},{54,-64.3407},{54,-74},{12,-74},{12,-79.4}},
+      color={0,0,127},
+      smooth=Smooth.None));
   annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100,-100},{100,100}}), graphics), Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -100},{100,100}}),                                                                                                    graphics));
-end HVAC_KK_TZon;
+end HVAC_KK_TZon_Tes_SingleInput;

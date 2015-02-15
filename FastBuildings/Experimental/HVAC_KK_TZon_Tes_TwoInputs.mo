@@ -1,6 +1,6 @@
 within FastBuildings.Experimental;
-model HVAC_KK_TZon
-  "Total HVAC model for KK, with TZon instead of TAmb for connection to capTecRoo"
+model HVAC_KK_TZon_Tes_TwoInputs
+  "Total HVAC model for KK with TES with two inputs"
   extends HVAC.Partial_HVAC;
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";
   parameter SI.ThermalResistance rLos = 1
@@ -9,6 +9,9 @@ model HVAC_KK_TZon
   parameter SI.ThermalResistance rTecRoo = 1
     "Total thermal resistance to the technical room, in K/W";
   parameter SI.HeatCapacity cTecRoo = 1 "Thermal capacity of the zone";
+  parameter SI.HeatCapacity cTes = 1 "Thermal capacity of TES";
+  parameter SI.ThermalResistance rTes = 1
+    "Total thermal resistance from TES to technical room, in K/W";
 
   GB_QSet_ConstantEta gb
     annotation (Placement(transformation(extent={{72,30},{92,50}})));
@@ -52,6 +55,42 @@ model HVAC_KK_TZon
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={-24,60})));
+  Zones.BaseClasses.Capacitor capTes(c=cTes)
+    annotation (Placement(transformation(extent={{-34,-68},{-14,-48}})));
+  Zones.BaseClasses.Resistance resTes(r=rTes)
+    "Resistance for heat losses to technical room" annotation (Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=0,
+        origin={-4,-92})));
+  TwoPort_PrescribedHeatFlow TES annotation (Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=0,
+        origin={6,-68})));
+  Modelica.Blocks.Interfaces.RealInput QTes_c "Charging power" annotation (
+      Placement(
+      visible=true,
+      transformation(
+        origin={104.422,-64.3407},
+        extent={{12,-12},{-12,12}},
+        rotation=0),
+      iconTransformation(
+        origin={-99.578,-80.3407},
+        extent={{-12,-12},{12,12}},
+        rotation=0)));
+  Modelica.Blocks.Interfaces.RealInput QTes_d "Discharging power" annotation (
+      Placement(
+      visible=true,
+      transformation(
+        origin={104.422,-90.3407},
+        extent={{12,-12},{-12,12}},
+        rotation=0),
+      iconTransformation(
+        origin={-99.578,-80.3407},
+        extent={{-12,-12},{12,12}},
+        rotation=0)));
+  Modelica.Blocks.Math.Add QTes(k2=-1)
+    annotation (Placement(transformation(extent={{72,-88},{52,-68}})));
 equation
   connect(heaPorCon, qCon.heaPor_b) annotation (Line(
       points={{-99.83,0.0682},{-90,0.0682},{-90,0},{-80,0}},
@@ -115,6 +154,34 @@ equation
           -55.2,60}},
       color={0,0,127},
       smooth=Smooth.None));
+  connect(capTes.heaPor, resTes.heaPor_a) annotation (Line(
+      points={{-24,-68},{-24,-92},{-14,-92}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(resTes.heaPor_b, resTecRoo.heaPor_a) annotation (Line(
+      points={{6,-92},{28,-92},{28,40},{-6,40},{-6,60},{-14,60}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(TES.heaPor_a, capHea.heaPor) annotation (Line(
+      points={{16,-68},{40,-68},{40,60}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(capTes.heaPor, TES.heaPor_b) annotation (Line(
+      points={{-24,-68},{-4,-68}},
+      color={191,0,0},
+      smooth=Smooth.None));
+  connect(QTes_c, QTes.u1) annotation (Line(
+      points={{104.422,-64.3407},{84,-64.3407},{84,-72},{74,-72}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(QTes_d, QTes.u2) annotation (Line(
+      points={{104.422,-90.3407},{84,-90.3407},{84,-84},{74,-84}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(QTes.y, TES.QSet) annotation (Line(
+      points={{51,-78},{32,-78},{32,-48},{6,-48},{6,-57.4}},
+      color={0,0,127},
+      smooth=Smooth.None));
   annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100,-100},{100,100}}), graphics), Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -100},{100,100}}),                                                                                                    graphics));
-end HVAC_KK_TZon;
+end HVAC_KK_TZon_Tes_TwoInputs;

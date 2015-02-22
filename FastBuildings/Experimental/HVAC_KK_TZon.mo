@@ -10,11 +10,14 @@ model HVAC_KK_TZon
     "Total thermal resistance to the technical room, in K/W";
   parameter SI.HeatCapacity cTecRoo = 1 "Thermal capacity of the zone";
 
-  GB_QSet_ConstantEta gb
+  replaceable GB_QSet_ConstantEta gb constrainedby
+    FastBuildings.Experimental.Partial_HeatProduction
     annotation (Placement(transformation(extent={{72,30},{92,50}})));
-  HP_AW_QSet_ConstantCOP hp1
+  replaceable HP_AW_QSet_ConstantCOP hp1 constrainedby
+    FastBuildings.Experimental.Partial_HeatProduction
     annotation (Placement(transformation(extent={{72,-10},{92,10}})));
-  HP_AW_QSet_ConstantCOP hp2
+  replaceable HP_AW_QSet_ConstantCOP hp2 constrainedby
+    FastBuildings.Experimental.Partial_HeatProduction
     annotation (Placement(transformation(extent={{72,-50},{92,-30}})));
   Zones.BaseClasses.Capacitor capHea(c=cHea)
     annotation (Placement(transformation(extent={{30,60},{50,80}})));

@@ -8,8 +8,7 @@ partial model Partial_SZ_Zon
     "Total thermal resistance of the walls, in K/W";
   BaseClasses.Capacitor capZon(c=cZon) "Thermal capacity of the zone"
     annotation (Placement(transformation(extent={{10,60},{30,80}})));
-  replaceable Windows.Window_gA[nIrr] win constrainedby Windows.PartialWindow
-    "Array of window models"
+  replaceable Windows.Window_gA[nIrr] win "Array of window models"
     annotation (Placement(transformation(extent={{-100,30},{-80,50}})));
   BaseClasses.Resistance resWal(r=rWal)
     "Total thermal resistance of the walls, in K/W"

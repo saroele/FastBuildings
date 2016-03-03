@@ -1,4 +1,4 @@
 within FastBuildings.Zones_stochastic;
-package Windows 
 
+package Windows
 end Windows;

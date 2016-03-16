@@ -6,18 +6,18 @@ model GB_QSet_Eta_full "Gas boiler with  QSet end eta as function of TAmb, TSup 
   Modelica.Blocks.Interfaces.RealOutput PEle annotation(Placement(transformation(extent = {{96, 30}, {116, 50}})));
   Modelica.Blocks.Interfaces.RealOutput PFuel annotation(Placement(transformation(extent = {{96, -50}, {116, -30}})));
   /*
-                              The equation for eta is a GLM found by OLS regression with statsmodels.
-                              To obtain a generic model, a backward selection is performed based on a full
-                              factorial model with TAmb, TSup and Q as predictors.
-                              
-                              The predictors are shifted so the intercept is a realistic value for these 
-                              conditions: 
-                              - full load
-                              - Temperature regime of 7/35 (same as heat pump, note very relevant for boiler 
-                              (but it does not really matter)
-                              
-                              The parameters can (and some will) be zero. 
-                              */
+                                      The equation for eta is a GLM found by OLS regression with statsmodels.
+                                      To obtain a generic model, a backward selection is performed based on a full
+                                      factorial model with TAmb, TSup and Q as predictors.
+                                      
+                                      The predictors are shifted so the intercept is a realistic value for these 
+                                      conditions: 
+                                      - full load
+                                      - Temperature regime of 7/35 (same as heat pump, note very relevant for boiler 
+                                      (but it does not really matter)
+                                      
+                                      The parameters can (and some will) be zero. 
+                                      */
   parameter Real Intercept = 0;
   parameter Real TAmb7 = 0;
   parameter Real TSup35 = 0;

@@ -3,17 +3,17 @@ within FastBuildings.Input;
 model SIM_Inputs_2Zones "SIM with inputs from filereaders or other means for 2zone buildings"
   extends FastBuildings.Input.BaseClasses.Partial_SIM;
   /* 
-                               This model does not specify the trajectories for the realOutputs
-                               Instead, additional equations or inputs have to be provided in the
-                               model that instantiates this simFasBui.
-                               
-                               For example, if an irradiation and TAmb are provided, instantiate this model as follows:
-                               inner FastBuildings.Input.SIM_Inputs sim(nIrr=1, booTAmb=true)
-                               equation
-                               simFasBui.TAmb = ... ;
-                               simFasBui.irr[1] = ... ;
-                              
-                              */
+                                       This model does not specify the trajectories for the realOutputs
+                                       Instead, additional equations or inputs have to be provided in the
+                                       model that instantiates this simFasBui.
+                                       
+                                       For example, if an irradiation and TAmb are provided, instantiate this model as follows:
+                                       inner FastBuildings.Input.SIM_Inputs sim(nIrr=1, booTAmb=true)
+                                       equation
+                                       simFasBui.TAmb = ... ;
+                                       simFasBui.irr[1] = ... ;
+                                      
+                                      */
   Modelica.Blocks.Interfaces.RealOutput qHeaCoo1 "Heating/cooling" annotation(Placement(visible = true, transformation(origin = {-32.5, -104.427}, extent = {{-10, -10}, {10, 10}}, rotation = 270), iconTransformation(origin = {79.6078, -109.752}, extent = {{-10, -10}, {10, 10}}, rotation = 270)));
   Modelica.Blocks.Interfaces.RealOutput qHeaCoo2 "Heating/cooling" annotation(Placement(visible = true, transformation(origin = {-60.5, -104.427}, extent = {{-10, -10}, {10, 10}}, rotation = 270), iconTransformation(origin = {79.6078, -109.752}, extent = {{-10, -10}, {10, 10}}, rotation = 270)));
   annotation(defaultComponentName = "sim", defaultComponentPrefixes = "inner", missingInnerMessage = "

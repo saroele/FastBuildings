@@ -6,17 +6,17 @@ model HP_AW_QSet_COP_full "Air-water heat pump with QSet and COP based on TAmb, 
   Modelica.Blocks.Interfaces.RealOutput PEle annotation(Placement(transformation(extent = {{96, 30}, {116, 50}})));
   Modelica.Blocks.Interfaces.RealOutput PFuel annotation(Placement(transformation(extent = {{96, -50}, {116, -30}})));
   /*
-                              The equation for the COP is a GLM found by OLS regression with statsmodels.
-                              To obtain a generic model, a backward selection is performed based on a full
-                              factorial model with TAmb, TSup and PEle as predictors.
-                              
-                              The predictors are shifted so the intercept is a realistic value for these 
-                              conditions: 
-                              - full load
-                              - Temperature regime of 7/35
-                              
-                              The parameters can (and some will) be zero. 
-                              */
+                                      The equation for the COP is a GLM found by OLS regression with statsmodels.
+                                      To obtain a generic model, a backward selection is performed based on a full
+                                      factorial model with TAmb, TSup and PEle as predictors.
+                                      
+                                      The predictors are shifted so the intercept is a realistic value for these 
+                                      conditions: 
+                                      - full load
+                                      - Temperature regime of 7/35
+                                      
+                                      The parameters can (and some will) be zero. 
+                                      */
   parameter Real Intercept = 0;
   parameter Real TAmb7 = 0;
   parameter Real TSup35 = 0;

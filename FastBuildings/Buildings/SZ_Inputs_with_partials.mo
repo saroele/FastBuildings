@@ -2,7 +2,7 @@ within FastBuildings.Buildings;
 
 model SZ_Inputs_with_partials
   extends FastBuildings.Buildings.BaseClasses.PartialSingleZone(redeclare replaceable FastBuildings.HVAC.Heating_Input hva);
-  replaceable FastBuildings.Users.powEleFra use constrainedby FastBuildings.Users.Partial_User annotation(Placement(visible = true, transformation(origin = {-27.6923, -40.6838}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  replaceable FastBuildings.Users.powEleFra use annotation(Placement(visible = true, transformation(origin = {-27.6923, -40.6838}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(simFasBui.powEle, use.powEle) annotation(Line(points = {{-86.193, 78.5462}, {-81.0256, 78.5462}, {-81.0256, -40.6838}, {-38.3051, -40.6838}, {-38.3051, -40.6577}}));
   connect(use.heaPorRad, zon.heaPorRad) annotation(Line(points = {{-17.7053, -44.6473}, {-5.47009, -44.6473}, {-5.47009, -4.10256}, {-19.0598, -4.10256}, {-19.0598, -3.65812}}));

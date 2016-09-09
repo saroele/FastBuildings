@@ -3,7 +3,7 @@ within FastBuildings.HVAC;
 model Heating_qConRad_qEmb "Heating/cooling from two inputs: qConRad (distributed to radiative and convective ports) and embedded"
 
 
-  extends Partial_HVAC;
+  extends Partial_HVAC(redeclare FastBuildings.Input.SIM_Inputs_qConRad_qEmb simFasBui);
   parameter Real fraRad = 0.3 "Fraction of heating to radiation";
 equation
   heaPorCon.Q_flow = -(1 - fraRad) * simFasBui.qConRad;
